@@ -15,7 +15,7 @@ export const cognitiveAreas: CognitiveArea[] = [
     icon: 'Target',
     color: 'bg-blue-500',
     description: 'Mejora tu capacidad de concentración y enfoque',
-    imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb2N1cyUyMGF0dGVudGlvbiUyMHRhcmdldHxlbnwxfHx8fDE3NjAxOTg1ODF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    imageUrl: 'https://www.fundacionfass.org/wp-content/uploads/2024/03/La-estimulacion-cognitiva-en-las-personas-mayores-1500x750.jpg'
   },
   {
     id: 'lenguaje',
@@ -23,7 +23,7 @@ export const cognitiveAreas: CognitiveArea[] = [
     icon: 'MessageCircle',
     color: 'bg-green-500',
     description: 'Fortalece tus habilidades de comunicación',
-    imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5ndWFnZSUyMGxldHRlcnMlMjB3b3Jkc3xlbnwxfHx8fDE3NjAxOTg1ODF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    imageUrl: 'https://i.pinimg.com/736x/ca/c5/1f/cac51fae1b72fdf10ec91aaf080f1703.jpg'
   },
   {
     id: 'funciones-ejecutivas',
@@ -39,7 +39,7 @@ export const cognitiveAreas: CognitiveArea[] = [
     icon: 'Eye',
     color: 'bg-pink-500',
     description: 'Agudiza tu percepción visual y espacial',
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZW1vcnklMjBicmFpbiUyMHB1enpsZXxlbnwxfHx8fDE3NjAxOTg1ODF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    imageUrl: 'https://ecoembesempleo.es/web/app/uploads/2020/04/AdobeStock_273858049.jpeg'
   }
 ];
 
@@ -49,10 +49,10 @@ export const activities: Activity[] = [
     id: 'mem-1',
     areaId: 'memoria',
     name: 'Recordar Palabras',
-    description: 'Memoriza una lista de palabras y recuérdalas después',
+    description: 'Memoriza una lista de palabras y recuérdalas',
     estimatedTime: 10,
     cognitiveSkills: ['Memoria a corto plazo', 'Atención'],
-    imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
+    imageUrl: 'https://imagenes.elpais.com/resizer/v2/PK32I6HHW4GU7DAQZGKXNRUAZU.jpg?auth=702b43134739aa266e8911a515982bbf1600b5716f8d926eb895d89376a965bc&width=1960&height=1470&smart=true'
   },
   {
     id: 'mem-2',
@@ -61,7 +61,7 @@ export const activities: Activity[] = [
     description: 'Encuentra las parejas de tarjetas iguales',
     estimatedTime: 15,
     cognitiveSkills: ['Memoria visual', 'Concentración'],
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
+    imageUrl: 'https://cdn2.spatial.io/assets/v1/static/external_games/dream-pet-link.jpeg'
   },
   {
     id: 'mem-3',
@@ -70,7 +70,7 @@ export const activities: Activity[] = [
     description: 'Recuerda y repite secuencias de números',
     estimatedTime: 8,
     cognitiveSkills: ['Memoria de trabajo', 'Atención auditiva'],
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
+    imageUrl: 'https://img.freepik.com/fotos-premium/numeros-madera-colores_87742-4861.jpg?semt=ais_hybrid&w=740&q=80'
   },
   
   // Atención
@@ -81,7 +81,7 @@ export const activities: Activity[] = [
     description: 'Identifica las diferencias entre dos imágenes similares',
     estimatedTime: 12,
     cognitiveSkills: ['Atención selectiva', 'Percepción visual'],
-    imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5L4UsegUwj7d60J5Y1i5Rne6R0K4Y6d7p9A&s'
   },
   {
     id: 'ate-2',
@@ -90,7 +90,7 @@ export const activities: Activity[] = [
     description: 'Tacha todas las letras "A" que encuentres',
     estimatedTime: 10,
     cognitiveSkills: ['Atención sostenida', 'Velocidad de procesamiento'],
-    imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1552321046-a54642dc0cb8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1255'
   },
   {
     id: 'ate-3',
@@ -99,7 +99,7 @@ export const activities: Activity[] = [
     description: 'Identifica y continúa el patrón de colores',
     estimatedTime: 15,
     cognitiveSkills: ['Atención alternante', 'Razonamiento'],
-    imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1511298341002-15d91b5d09b7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870'
   },
   
   // Lenguaje
@@ -110,7 +110,7 @@ export const activities: Activity[] = [
     description: 'Forma palabras con las letras proporcionadas',
     estimatedTime: 12,
     cognitiveSkills: ['Fluidez verbal', 'Vocabulario'],
-    imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1535572290543-960a8046f5af?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470'
   },
   {
     id: 'len-2',
@@ -119,7 +119,7 @@ export const activities: Activity[] = [
     description: 'Nombra elementos de una categoría específica',
     estimatedTime: 10,
     cognitiveSkills: ['Fluidez semántica', 'Memoria semántica'],
-    imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1608679627228-a8393e0f3fa5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470'
   },
   {
     id: 'len-3',
@@ -128,7 +128,7 @@ export const activities: Activity[] = [
     description: 'Completa las frases con la palabra correcta',
     estimatedTime: 8,
     cognitiveSkills: ['Comprensión verbal', 'Razonamiento'],
-    imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1704793027939-10d2af64b717?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470'
   },
   
   // Funciones Ejecutivas
@@ -139,7 +139,7 @@ export const activities: Activity[] = [
     description: 'Mueve los discos siguiendo las reglas',
     estimatedTime: 15,
     cognitiveSkills: ['Planificación', 'Resolución de problemas'],
-    imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg'
   },
   {
     id: 'fun-2',
@@ -148,7 +148,7 @@ export const activities: Activity[] = [
     description: 'Encuentra el camino de salida del laberinto',
     estimatedTime: 10,
     cognitiveSkills: ['Orientación espacial', 'Planificación'],
-    imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
+    imageUrl: 'https://content.cuerpomente.com/medio/2023/02/23/laberinto_3aa67995_1280x720.jpg'
   },
   {
     id: 'fun-3',
@@ -157,7 +157,7 @@ export const activities: Activity[] = [
     description: 'Ordena los pasos de una actividad cotidiana',
     estimatedTime: 12,
     cognitiveSkills: ['Secuenciación', 'Razonamiento lógico'],
-    imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
+    imageUrl: 'https://www.ozono21.com/blog/wp-content/uploads/2020/09/actividades_cotidianas_2.jpg'
   },
   
   // Percepción
@@ -168,7 +168,7 @@ export const activities: Activity[] = [
     description: 'Encuentra las figuras escondidas en la imagen',
     estimatedTime: 10,
     cognitiveSkills: ['Percepción visual', 'Atención'],
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
+    imageUrl: 'https://images.unsplash.com/photo-1632096936824-565d39f8e5eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870'
   },
   {
     id: 'per-2',
@@ -177,7 +177,7 @@ export const activities: Activity[] = [
     description: 'Identifica la figura rotada correctamente',
     estimatedTime: 12,
     cognitiveSkills: ['Orientación espacial', 'Percepción visual'],
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
+    imageUrl: 'https://media.istockphoto.com/id/1477169982/es/foto/poliedros-de-diferentes-colores-s%C3%B3lidos-plat%C3%B3nicos-backgound-ilustraci%C3%B3n-3d.jpg?s=612x612&w=0&k=20&c=7BT55mswL1y7_uR0QSBjuwtAm7uoQBhM_EpT_lGorCw='
   },
   {
     id: 'per-3',
@@ -186,7 +186,7 @@ export const activities: Activity[] = [
     description: 'Clasifica elementos por color y forma',
     estimatedTime: 8,
     cognitiveSkills: ['Categorización', 'Atención selectiva'],
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
+    imageUrl: 'https://www.niggli.ch/wp-content/uploads/2020/12/9783721208658_4_1.jpg'
   }
 ];
 
