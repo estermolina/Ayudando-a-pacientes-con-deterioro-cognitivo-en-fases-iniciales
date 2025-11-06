@@ -45,10 +45,10 @@ CognitivaCare/
         └── types/     # Estilos Tailwind CSS
 ```
         
-## 🎯 Requisitos para instalación de la aplicación 
+## 🎯 Requisitos previos para instalación de la aplicación 
 - Node.js v20+ (LTS)
 - npm o yarn
-- MongoDB Atlas (cuenta gratuita) o local
+- MongoDB Atlas
 - Windows 10/11 o Linux/Mac
 
 - ## 🔧 Configuración para utilizar la aplicación
@@ -91,4 +91,4 @@ npm run dev
 Este proyecto fue desarrollado como Trabajo Fin de Grado (TFG) en la Universidad de Castilla-La Mancha por **Ester Molina García**
 
 
-**Desarrollado con ❤️ para mejorar la calidad de vida de nuestros mayores**
+**Desarrollado para mejorar la calidad de vida de nuestros mayores❤️**
