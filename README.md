@@ -1,7 +1,8 @@
 # 🧠 CognitivaCare
 
 > Aplicación web de estimulación cognitiva para pacientes con deterioro cognitivo en fases iniciales
-> Trabajo fin de Grado de la intensificación de Ingeniería del Software desarrollado por Ester Molina García
+> 
+> **Trabajo fin de Grado** de la intensificación de **Ingeniería del Software** desarrollado por **Ester Molina García**
 
 ## ✨ Características
 - 🧠 **5 Áreas Cognitivas** - Memoria, Atención, Lenguaje, Funciones Ejecutivas y Percepción
