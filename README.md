@@ -1,8 +1,12 @@
 # 🧠 CognitivaCare
 
-> Aplicación web de estimulación cognitiva para pacientes con deterioro cognitivo en fases iniciales
-> 
+> **Aplicación web de estimulación cognitiva para pacientes con deterioro cognitivo en fases iniciales**
 > **Trabajo fin de Grado** de la intensificación de **Ingeniería del Software** desarrollado por **Ester Molina García**
+
+## 📋 Descripción
+
+CognitivaCare es una plataforma diseñada para ayudar a personas mayores y pacientes con deterioro cognitivo leve a ejercitar su mente a través de actividades interactivas. La aplicación incluye ejercicios de memoria, atención, lenguaje, funciones ejecutivas y percepción.
+
 
 ## ✨ Características
 - 🧠 **5 Áreas Cognitivas** - Memoria, Atención, Lenguaje, Funciones Ejecutivas y Percepción
@@ -15,25 +19,27 @@
 
 ## 🛠️ Tecnologías utilizadas
 ### Frontend
-- React 18 + TypeScript como lenguajes
-- Vite como herramienta de construcción y desarrollo
-- Tailwind CSS v4 como framework de CSS 
-- Shadcn/UI para componentes UI
-- Recharts para el panel de seguimiento
+- TypeScript - Lenguaje de programación
+- React 18 - Framework UI
+- Vite - Herramienta de construcción y desarrollo
+- Tailwind CSS v4 - Hoja de estilos
+- Shadcn/UI - Componentes UI
+- Recharts - Gráficos panel de seguimiento
 
 ### Backend
-- Node.js + Express como entorno y framework para la API
-- MongoDB + Mongoose como base de datos NoSQL
-- JWT para autenticación y sesión
-- bcrypt como encriptación de contraseñas
+- Node.js - Entorno de ejecución
+- Express - Framework para la API
+- MongoDB + Mongoose - Base de datos NoSQL
+- JWT - Autenticación y sesión
+- bcrypt - Encriptación de contraseñas
 
 ## 📁 Estructura del Proyecto
 
 ```
 CognitivaCare/
-├── backend/          # API Node.js (Puerto 5000)
+├── backend/          # Lógica del servidor (Puerto 5000)
 │   └── server.js
-└── frontend/         # (Puerto 3000)
+└── frontend/         # Lógica de la interfaz de usuario(Puerto 3000)
     └── index.html    # archivo HTML de entrada
     └── src/
         ├── main.tsx    # Punto de entrada React
@@ -54,7 +60,7 @@ CognitivaCare/
 - ## 🔧 Configuración para utilizar la aplicación
 
 ### Backend
-
+```
 1. Crea archivo `.env` en `/backend/`:
 MONGODB_URI=tu-uri-de-mongodb
 JWT_SECRET=tu-clave-secreta
@@ -66,16 +72,16 @@ npm install
 
 3. Ejecuta:
 npm run dev
-
+````
 ### Frontend
-
+```
 1. Instala dependencias:
 cd frontend
 npm install
 
 2. Ejecuta:
 npm run dev
-
+```
 
 ## 🎮 Uso
 
