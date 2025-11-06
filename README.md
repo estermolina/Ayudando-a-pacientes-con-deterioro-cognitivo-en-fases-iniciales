@@ -26,19 +26,6 @@
 - MongoDB + Mongoose como base de datos NoSQL
 - JWT para autenticación y sesión
 - bcrypt como encriptación de contraseñas
-  
-## 📁 Estructura del Proyecto
-CognitivaCare/
-├── backend/          # lógica de la aplicación -> API Node.js (Puerto 5000)
-│   └── server.js
-└── frontend/         # (Puerto 3000)
-    └── src/
-        ├── App.tsx    # lógica de navegación principal
-        ├── components/  
-        ├── data/
-        ├── services/
-        ├── styles/
-        └── types/
         
 ## 🎯 Requisitos para instalación de la aplicación 
 - Node.js v20+ (LTS)
