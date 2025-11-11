@@ -1,4 +1,4 @@
-import { ArrowLeft, TrendingUp, Award, Calendar } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Award, Calendar, Clock } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
 import { ActivityResult, CognitiveArea } from '../../types';
@@ -41,32 +41,72 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
     return 'Necesita práctica';
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 p-8">
-      {/* Header */}
-      <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-        <h1 className="text-purple-700 mb-3">Resultados y Progreso</h1>
-        <p className="text-xl text-gray-600">Revisa tu desempeño en todas las actividades</p>
-      </div>
+  // Función para el tiempo formateado
+    const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+  
+  // Función para el tiempo total empleado
+    const formatTotalTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    
+    if (hours > 0) {
+      return `${hours}h ${mins}m ${secs}s`;
+    } else if (mins > 0) {
+      return `${mins}m ${secs}s`;
+    } else {
+      return `${secs}s`;
+    }
+  };
 
-      {/* Overall Score */}
-      <Card className="p-10 mb-8 bg-gradient-to-br from-purple-500 to-blue-500 text-white shadow-xl">
-        <div className="flex items-center gap-8">
-          <div className="w-28 h-28 bg-white bg-opacity-20 rounded-3xl flex items-center justify-center backdrop-blur-sm">
-            <Award className="w-16 h-16" />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-white mb-3">Puntuación General</h2>
-            <p className="text-xl opacity-90 mb-6">
-              Promedio de todas las actividades realizadas
-            </p>
-            <div className="flex items-center gap-6">
-              <span className="text-7xl">{overallAverage}%</span>
-              <TrendingUp className="w-14 h-14" />
+// Calculate total time spent
+  const totalTimeSpent = results.reduce((acc, r) => acc + r.timeSpent, 0);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm p-6">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-purple-700">Resultados y Progreso</h1>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto p-6 mt-8">
+        {/* Overall Score */}
+        <Card className="p-8 mb-8 bg-gradient-to-br from-purple-500 to-blue-500 text-white">
+          <div className="flex items-center gap-6">
+            <div className="w-24 h-24 bg-white bg-opacity-20 rounded-3xl flex items-center justify-center backdrop-blur">
+              <Award className="w-14 h-14" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-white mb-2">Puntuación General</h2>
+              <p className="text-2xl opacity-90 mb-4">
+                Promedio de todas las actividades realizadas
+              </p>
+              <div className="flex items-center gap-8">
+                <div>
+                  <p className="text-xl opacity-75 mb-1">Porcentaje</p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-6xl">{overallAverage}%</span>
+                    <TrendingUp className="w-12 h-12" />
+                  </div>
+                </div>
+                <div className="h-20 w-px bg-white opacity-30"></div>
+                <div>
+                  <p className="text-xl opacity-75 mb-1">Tiempo Total</p>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-10 h-10 opacity-90" />
+                    <span className="text-5xl">{formatTotalTime(totalTimeSpent)}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </Card>
+        </Card>
 
       {/* Results by Cognitive Area */}
       <div className="mb-12">
@@ -119,6 +159,7 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
                     <th className="px-6 py-4 text-left text-gray-900">Fecha</th>
                     <th className="px-6 py-4 text-left text-gray-900">Área</th>
                     <th className="px-6 py-4 text-left text-gray-900">Dificultad</th>
+                    <th className="px-6 py-4 text-left text-xl text-gray-900">Tiempo</th>
                     <th className="px-6 py-4 text-left text-gray-900">Aciertos</th>
                     <th className="px-6 py-4 text-left text-gray-900">Porcentaje</th>
                   </tr>
@@ -149,13 +190,18 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
                              result.difficulty === 'medio' ? 'Medio' : 'Difícil'}
                           </span>
                         </td>
-                        <td className="px-6 py-5">
+                        <td className="px-6 py-4">
+                          <span className="text-lg text-gray-900">
+                             {formatTime(result.timeSpent)}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">
                           <span className="text-lg text-gray-900">
                             {result.correctAnswers}/{result.correctAnswers + result.incorrectAnswers}
                           </span>
                         </td>
-                        <td className="px-6 py-5">
-                          <span className={`text-xl ${getStatusColor(result.percentage)}`}>
+                        <td className="px-6 py-4">
+                          <span className={`text-2xl ${getStatusColor(result.percentage)}`}>
                             {result.percentage}%
                           </span>
                         </td>
@@ -178,6 +224,7 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
           </p>
         </Card>
       )}
+      </main>
     </div>
   );
 }

@@ -66,17 +66,27 @@ export function ActivityExecutionScreen({ session, onComplete, onExit }: Activit
         // Para actividades que aún no tienen ejercicio específico
         return (
           <div className="text-center p-12">
-            <h3 className="text-gray-900 mb-4">Ejercicio en desarrollo</h3>
+            <div className="mb-6">
+              <div className="w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-5xl">🚧</span>
+              </div>
+            </div>
+            <h3 className="text-gray-900 mb-4">Ejercicio en Desarrollo</h3>
             <p className="text-xl text-gray-600 mb-8">
-              Este ejercicio específico está en desarrollo. 
-              Por ahora, puedes completarlo manualmente.
+              Este ejercicio específico está siendo desarrollado. 
+              ¡Próximamente estará disponible!
+            </p>
+            <p className="text-lg text-gray-500 mb-8">
+              Por favor, selecciona otra actividad disponible o vuelve más tarde.
             </p>
             <Button
-              onClick={() => handleExerciseComplete(1, 0)}
+              onClick={onExit}
               size="lg"
-              className="h-16 text-2xl bg-gradient-to-r from-green-500 to-green-600"
+              variant="outline"
+              className="h-16 text-2xl px-12"
             >
-              Marcar como Completado
+              <X className="w-6 h-6 mr-2" />
+              Volver al Listado
             </Button>
           </div>
         );

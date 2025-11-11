@@ -1,4 +1,4 @@
-import { ArrowLeft, TrendingUp, Award, Calendar } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Award, Calendar, Clock } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
 import { ActivityResult, CognitiveArea } from '../../types';
@@ -41,6 +41,31 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
     return 'Necesita práctica';
   };
 
+  // Función para el tiempo formateado
+    const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+  
+  // Función para el tiempo total empleado
+    const formatTotalTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    
+    if (hours > 0) {
+      return `${hours}h ${mins}m ${secs}s`;
+    } else if (mins > 0) {
+      return `${mins}m ${secs}s`;
+    } else {
+      return `${secs}s`;
+    }
+  };
+
+// Calculate total time spent
+  const totalTimeSpent = results.reduce((acc, r) => acc + r.timeSpent, 0);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
       {/* Header */}
@@ -62,14 +87,26 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
               <p className="text-2xl opacity-90 mb-4">
                 Promedio de todas las actividades realizadas
               </p>
-              <div className="flex items-center gap-6">
-                <span className="text-6xl">{overallAverage}%</span>
-                <TrendingUp className="w-12 h-12" />
+              <div className="flex items-center gap-8">
+                <div>
+                  <p className="text-xl opacity-75 mb-1">Porcentaje</p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-6xl">{overallAverage}%</span>
+                    <TrendingUp className="w-12 h-12" />
+                  </div>
+                </div>
+                <div className="h-20 w-px bg-white opacity-30"></div>
+                <div>
+                  <p className="text-xl opacity-75 mb-1">Tiempo Total</p>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-10 h-10 opacity-90" />
+                    <span className="text-5xl">{formatTotalTime(totalTimeSpent)}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </Card>
-
         {/* Results by Cognitive Area */}
         <div className="mb-12">
           <h2 className="text-gray-900 mb-6">Resultados por Área Cognitiva</h2>
@@ -120,6 +157,7 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
                     <th className="px-6 py-4 text-left text-xl text-gray-900">Fecha</th>
                     <th className="px-6 py-4 text-left text-xl text-gray-900">Área</th>
                     <th className="px-6 py-4 text-left text-xl text-gray-900">Dificultad</th>
+                    <th className="px-6 py-4 text-left text-xl text-gray-900">Tiempo</th>
                     <th className="px-6 py-4 text-left text-xl text-gray-900">Aciertos</th>
                     <th className="px-6 py-4 text-left text-xl text-gray-900">Porcentaje</th>
                   </tr>
@@ -148,6 +186,11 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
                           }`}>
                             {result.difficulty === 'facil' ? 'Fácil' : 
                              result.difficulty === 'medio' ? 'Medio' : 'Difícil'}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="text-lg text-gray-900">
+                             {formatTime(result.timeSpent)}
                           </span>
                         </td>
                         <td className="px-6 py-4">
