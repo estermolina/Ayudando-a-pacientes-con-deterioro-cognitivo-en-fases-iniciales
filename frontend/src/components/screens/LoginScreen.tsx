@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Brain, Mail, Lock, User as UserIcon, Loader2 } from 'lucide-react';
+import { Brain, Mail, Lock, User as UserIcon, Loader2, BrainCog } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -49,7 +49,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
       <Card className="w-full max-w-2xl p-8 md:p-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-3xl mb-6 shadow-lg">
-            <Brain className="w-14 h-14 text-white" />
+            <BrainCog className="w-14 h-14 text-white" />
           </div>
           <h1 className="text-purple-700 mb-3">CognitivaCare</h1>
           <p className="text-2xl text-muted-foreground">

@@ -1,9 +1,13 @@
-import { Trophy, Clock, CheckCircle, XCircle, ArrowLeft } from 'lucide-react';
+import { Trophy, Clock, CheckCircle, XCircle, ArrowLeft, Brain, Target, MessageCircle, Puzzle, Eye } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Progress } from '../ui/progress';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 interface ActivityResultScreenProps {
   activityName: string;
+  activityImageUrl: string;
+  areaColor: string;
+  areaIcon: string;
   timeSpent: number;
   correctAnswers: number;
   incorrectAnswers: number;
@@ -11,8 +15,19 @@ interface ActivityResultScreenProps {
   onBackToList: () => void;
 }
 
+const iconMap: Record<string, any> = {
+  Brain,
+  Target,
+  MessageCircle,
+  Puzzle,
+  Eye
+};
+
 export function ActivityResultScreen({
   activityName,
+  activityImageUrl,
+  areaColor,
+  areaIcon,
   timeSpent,
   correctAnswers,
   incorrectAnswers,
@@ -39,17 +54,28 @@ export function ActivityResultScreen({
     return 'from-orange-500 to-red-600';
   };
 
+  const Icon = iconMap[areaIcon];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 flex items-center justify-center p-6">
       <div className="w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className={`bg-gradient-to-r ${getColor()} p-12 text-center text-white`}>
-          <div className="w-32 h-32 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur">
-            <Trophy className="w-20 h-20" />
+          <div className="relative w-40 h-40 mx-auto mb-6">
+            <ImageWithFallback
+              src={activityImageUrl}
+              alt={activityName}
+              className="w-full h-full object-cover rounded-3xl shadow-2xl"
+            />
+            {/* Badge with area icon */}
+            <div className={`absolute -bottom-3 -right-3 ${areaColor} w-16 h-16 rounded-2xl flex items-center justify-center shadow-xl border-4 border-white`}>
+              {Icon && <Icon className="w-9 h-9 text-white" />}
+            </div>
           </div>
           <h1 className="text-white mb-3">¡Actividad Completada!</h1>
           <p className="text-3xl opacity-90">{activityName}</p>
         </div>
+
 
         {/* Results */}
         <div className="p-12">

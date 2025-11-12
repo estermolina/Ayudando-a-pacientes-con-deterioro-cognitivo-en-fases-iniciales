@@ -1,8 +1,8 @@
-import { ArrowLeft, TrendingUp, Award, Calendar, Clock } from 'lucide-react';
-import { Button } from '../ui/button';
+import { TrendingUp, Award, Target, Calendar, Clock, Brain, Zap, Eye, Users,Puzzle,  MessageCircle} from 'lucide-react';
 import { Progress } from '../ui/progress';
 import { ActivityResult, CognitiveArea } from '../../types';
 import { Card } from '../ui/card';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 interface GlobalResultsScreenProps {
   results: ActivityResult[];
@@ -10,7 +10,16 @@ interface GlobalResultsScreenProps {
   onBack: () => void;
 }
 
+const iconMap: Record<string, any> = {
+  Brain,
+  Target,
+  MessageCircle,
+  Puzzle,
+  Eye
+};
+
 export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps) {
+
   // Calculate average by area
   const getAreaAverage = (areaId: string) => {
     const areaResults = results.filter(r => r.areaId === areaId);
@@ -66,22 +75,22 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
 // Calculate total time spent
   const totalTimeSpent = results.reduce((acc, r) => acc + r.timeSpent, 0);
 
-  return (
+return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
       {/* Header */}
       <header className="bg-white shadow-sm p-6">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-purple-700">Resultados y Progreso</h1>
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-purple-700">Resultados y Progreso</h1>
+          </div>
         </div>
       </header>
+
 
       <main className="max-w-7xl mx-auto p-6 mt-8">
         {/* Overall Score */}
         <Card className="p-8 mb-8 bg-gradient-to-br from-purple-500 to-blue-500 text-white">
           <div className="flex items-center gap-6">
-            <div className="w-24 h-24 bg-white bg-opacity-20 rounded-3xl flex items-center justify-center backdrop-blur">
-              <Award className="w-14 h-14" />
-            </div>
             <div className="flex-1">
               <h2 className="text-white mb-2">Puntuación General</h2>
               <p className="text-2xl opacity-90 mb-4">
@@ -108,44 +117,47 @@ export function GlobalResultsScreen({ results, areas }: GlobalResultsScreenProps
           </div>
         </Card>
 
-      {/* Results by Cognitive Area */}
-      <div className="mb-12">
-        <h2 className="text-gray-900 mb-6">Resultados por Área Cognitiva</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {areas.map(area => {
-            const average = getAreaAverage(area.id);
-            const areaResults = results.filter(r => r.areaId === area.id);
-            
-            return (
-              <Card key={area.id} className="p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <h3 className="text-gray-900 mb-2">{area.name}</h3>
-                    <p className="text-lg text-gray-600">
-                      {areaResults.length} actividad{areaResults.length !== 1 ? 'es' : ''} realizada{areaResults.length !== 1 ? 's' : ''}
-                    </p>
+ {/* Results by Cognitive Area */}
+        <div className="mb-12">
+          <h2 className="text-gray-900 mb-6">Resultados por Área Cognitiva</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {areas.map(area => {
+              const average = getAreaAverage(area.id);
+              const areaResults = results.filter(r => r.areaId === area.id);
+              const Icon = iconMap[area.icon];
+              
+              return (
+                <Card key={area.id} className="p-8 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <h3 className="text-gray-900 mb-2">{area.name}</h3>
+                      <p className="text-lg text-gray-600">
+                        {areaResults.length} actividad{areaResults.length !== 1 ? 'es' : ''} realizada{areaResults.length !== 1 ? 's' : ''}
+                      </p>
+                    </div>
+                    <div className={`${area.color} w-16 h-16 rounded-xl shadow-md flex items-center justify-center`}>
+                      {Icon && <Icon className="w-9 h-9 text-white" />}
+                    </div>
                   </div>
-                  <div className={`${area.color} w-16 h-16 rounded-xl shadow-md`}></div>
-                </div>
-                
-                <div className="mb-4">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-xl text-gray-600">Promedio</span>
-                    <span className={`text-4xl ${getStatusColor(average)}`}>
-                      {average}%
-                    </span>
+                  
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-xl text-gray-600">Promedio</span>
+                      <span className={`text-4xl ${getStatusColor(average)}`}>
+                        {average}%
+                      </span>
+                    </div>
+                    <Progress value={average} className="h-4" />
                   </div>
-                  <Progress value={average} className="h-4" />
-                </div>
-                
-                <p className={`text-lg ${getStatusColor(average)}`}>
-                  Estado: <span className="font-medium">{getStatusText(average)}</span>
-                </p>
-              </Card>
-            );
-          })}
+                  
+                  <p className={`text-lg ${getStatusColor(average)}`}>
+                    Estado: <span className="font-medium">{getStatusText(average)}</span>
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
       {/* Recent Activities */}
       {recentActivities.length > 0 && (

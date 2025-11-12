@@ -1,4 +1,4 @@
-import { Brain, TrendingUp } from 'lucide-react';
+import { TrendingUp, Dumbbell } from 'lucide-react';
 
 interface MainMenuProps {
   userName: string;
@@ -9,7 +9,7 @@ export function MainMenu({ userName, onNavigate }: MainMenuProps) {
   const menuOptions = [
     {
       id: 'activities' as const,
-      icon: Brain,
+      icon: Dumbbell,
       title: 'Actividades',
       description: 'Realiza ejercicios de estimulación cognitiva',
       color: 'from-purple-500 to-purple-600',
@@ -32,9 +32,6 @@ export function MainMenu({ userName, onNavigate }: MainMenuProps) {
       {/* Header */}
       <div className="bg-white rounded-2xl shadow-sm p-8 mb-8">
         <div className="flex items-center gap-5">
-          <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-            <Brain className="w-14 h-14 text-white" />
-          </div>
           <div>
             <h1 className="text-purple-700 mb-2">¡Hola, {userName}!</h1>
             <p className="text-xl text-gray-600">Selecciona una opción para comenzar</p>

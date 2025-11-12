@@ -32,6 +32,9 @@ export default function App() {
   const [currentSession, setCurrentSession] = useState<ActivitySession | null>(null);
   const [lastResult, setLastResult] = useState<{
     activityName: string;
+    activityImageUrl: string;
+    areaColor: string;
+    areaIcon: string;
     timeSpent: number;
     correctAnswers: number;
     incorrectAnswers: number;
@@ -180,8 +183,12 @@ export default function App() {
     }
     
     // Mostrar pantalla de resultados
+    const area = cognitiveAreas.find(a => a.id === currentSession.activity.areaId);
     setLastResult({
       activityName: currentSession.activity.name,
+      activityImageUrl: currentSession.activity.imageUrl,
+      areaColor: area?.color || '#000',
+      areaIcon: area?.icon || 'icon',
       timeSpent,
       correctAnswers: correct,
       incorrectAnswers: incorrect,
@@ -281,6 +288,9 @@ export default function App() {
       {currentScreen === 'activity-result' && lastResult && (
         <ActivityResultScreen
           activityName={lastResult.activityName}
+          activityImageUrl={lastResult.activityImageUrl}
+          areaColor={lastResult.areaColor}
+          areaIcon={lastResult.areaIcon}
           timeSpent={lastResult.timeSpent}
           correctAnswers={lastResult.correctAnswers}
           incorrectAnswers={lastResult.incorrectAnswers}
