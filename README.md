@@ -5,7 +5,7 @@
 
 ## 📋 Descripción
 
-CognitivaCare es una plataforma diseñada para ayudar a personas mayores y pacientes con deterioro cognitivo leve a ejercitar su mente a través de actividades interactivas. La aplicación incluye ejercicios de memoria, atención, lenguaje, funciones ejecutivas y percepción.
+**CognitivaCare** es una aplicación diseñada para ayudar a pacientes con deterioro cognitivo leve a ejercitar su mente a través de diferentes actividades. La aplicación incluye ejercicios de memoria, atención, lenguaje, funciones ejecutivas y percepción. Además, permite a los familiares realizar un seguimiento y evolución mediante un panel de resultados.
 
 
 ## ✨ Características
@@ -37,18 +37,24 @@ CognitivaCare es una plataforma diseñada para ayudar a personas mayores y pacie
 
 ```
 CognitivaCare/
-├── backend/          # Lógica del servidor (Puerto 5000)
-│   └── server.js
-└── frontend/         # Lógica de la interfaz de usuario(Puerto 3000)
-    └── index.html    # archivo HTML de entrada
+├── backend/                     # Lógica del servidor (Puerto 5000)
+│   ├── server.js                
+│   ├── routes/                  # Endpoints API
+│   ├── models/                  # Lógica de datos (Base de datos)
+│   └── .env
+├── end-to-end/
+│   └── tests/
+│        └──sistema.spec.ts   # Pruebas integrales (2E2) de la aplicación
+└── frontend/                 # Lógica de la interfaz de usuario(Puerto 3000)
+    └── index.html            # archivo HTML de entrada
     └── src/
-        ├── main.tsx    # Punto de entrada React
-        ├── App.tsx     # Componente principal
+        ├── main.tsx          # Punto de entrada React
+        ├── App.tsx           # Componente principal
         ├── components/  
         ├── data/
-        ├── services/   # llamadas API
+        ├── services/          # llamadas API
         ├── styles/
-        └── types/     # Estilos Tailwind CSS
+        └── types/             # Estilos Tailwind CSS
 ```
         
 ## 🎯 Requisitos previos para instalación de la aplicación 
