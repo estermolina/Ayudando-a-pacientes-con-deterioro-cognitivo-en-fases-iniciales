@@ -11,20 +11,20 @@ export function FormarPalabras({ difficulty, onComplete }: FormarPalabrasProps) 
   const challenges = {
     facil: [
       { letters: 'OSCA', answer: 'COSA', hint: 'Objeto o elemento' },
-      { letters: 'SLAM', answer: 'SMAL', hint: 'Opuesto a grande (en inglés)' },
+      { letters: 'QPUEÑEO', answer: 'PEQUEÑO', hint: 'Opuesto a grande' },
       { letters: 'RPROE', answer: 'PERRO', hint: 'Mascota que ladra' },
       { letters: 'GAAU', answer: 'AGUA', hint: 'Líquido vital' },
     ],
     medio: [
       { letters: 'LIBOR', answer: 'LIBRO', hint: 'Se usa para leer' },
-      { letters: 'VNETANA', answer: 'VENTANA', hint: 'Deja pasar luz a la casa' },
+      { letters: 'VLNEZTANA', answer: 'VENTANA', hint: 'Deja pasar luz a la casa' },
       { letters: 'SLALIC', answer: 'SILLA', hint: 'Mueble para sentarse' },
-      { letters: 'FALIMO', answer: 'FAMILIA', hint: 'Grupo de parientes' },
+      { letters: 'FALIMIA', answer: 'FAMILIA', hint: 'Grupo de parientes' },
     ],
     dificil: [
-      { letters: 'CMOPUTADRAO', answer: 'COMPUTADORA', hint: 'Dispositivo electrónico' },
-      { letters: 'MIAOTVATINOC', answer: 'MOTIVACION', hint: 'Fuerza interior que impulsa' },
-      { letters: 'TIEMLNPARE', answer: 'MATERNAL', hint: 'Relacionado con la madre' },
+      { letters: 'RCORNUDERAOD', answer: 'ORDENADOR', hint: 'Dispositivo electrónico' },
+      { letters: 'MIAOTVATINOC', answer: 'MOTIVACION', hint: 'Fuerza interior que impulsa a hacer algo' },
+      { letters: 'OITUCNISOTC', answer: 'CONSTITUCION', hint: 'Ley que rige el sistema de gobierno de un país' },
       { letters: 'OSTMANIPE', answer: 'PENSAMIENTO', hint: 'Actividad mental' },
     ]
   };
@@ -65,6 +65,7 @@ export function FormarPalabras({ difficulty, onComplete }: FormarPalabrasProps) 
       <div className="text-center mb-8">
         <p className="text-xl text-gray-600 mb-4">Palabra {currentIndex + 1} de {words.length}</p>
         <h3 className="text-gray-900 mb-4">Ordena las letras para formar una palabra</h3>
+            <h2 className="text-1xl font-bold text-gray-800">⚠️Pueden aparecer más letras de las necesarias⚠️</h2>
       </div>
 
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12 mb-8">

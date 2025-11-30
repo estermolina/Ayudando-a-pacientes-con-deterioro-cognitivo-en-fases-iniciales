@@ -50,7 +50,7 @@ export const activities: Activity[] = [
     areaId: 'memoria',
     name: 'Recordar Palabras',
     description: 'Memoriza una lista de palabras y recuérdalas después',
-    estimatedTime: 10,
+    estimatedTime: 3,
     cognitiveSkills: ['Memoria a corto plazo', 'Atención'],
     imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
   },
@@ -59,7 +59,7 @@ export const activities: Activity[] = [
     areaId: 'memoria',
     name: 'Parejas de Imágenes',
     description: 'Encuentra las parejas de tarjetas iguales',
-    estimatedTime: 15,
+    estimatedTime: 4,
     cognitiveSkills: ['Memoria visual', 'Concentración'],
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
   },
@@ -68,7 +68,7 @@ export const activities: Activity[] = [
     areaId: 'memoria',
     name: 'Secuencias Numéricas',
     description: 'Recuerda y repite secuencias de números',
-    estimatedTime: 8,
+    estimatedTime: 3,
     cognitiveSkills: ['Memoria de trabajo', 'Atención auditiva'],
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
   },
@@ -79,7 +79,7 @@ export const activities: Activity[] = [
     areaId: 'atencion',
     name: 'Encuentra las Diferencias',
     description: 'Identifica las diferencias entre dos imágenes similares',
-    estimatedTime: 12,
+    estimatedTime: 4,
     cognitiveSkills: ['Atención selectiva', 'Percepción visual'],
     imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
   },
@@ -88,7 +88,7 @@ export const activities: Activity[] = [
     areaId: 'atencion',
     name: 'Tachado de Letras',
     description: 'Tacha todas las letras "A" que encuentres',
-    estimatedTime: 10,
+    estimatedTime: 2,
     cognitiveSkills: ['Atención sostenida', 'Velocidad de procesamiento'],
     imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
   },
@@ -97,7 +97,7 @@ export const activities: Activity[] = [
     areaId: 'atencion',
     name: 'Sigue el Patrón',
     description: 'Identifica y continúa el patrón de colores',
-    estimatedTime: 15,
+    estimatedTime: 4,
     cognitiveSkills: ['Atención alternante', 'Razonamiento'],
     imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400'
   },
@@ -108,7 +108,7 @@ export const activities: Activity[] = [
     areaId: 'lenguaje',
     name: 'Formar Palabras',
     description: 'Forma palabras con las letras proporcionadas',
-    estimatedTime: 12,
+    estimatedTime: 3,
     cognitiveSkills: ['Fluidez verbal', 'Vocabulario'],
     imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
   },
@@ -117,7 +117,7 @@ export const activities: Activity[] = [
     areaId: 'lenguaje',
     name: 'Categorías',
     description: 'Nombra elementos de una categoría específica',
-    estimatedTime: 10,
+    estimatedTime: 3,
     cognitiveSkills: ['Fluidez semántica', 'Memoria semántica'],
     imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
   },
@@ -126,7 +126,7 @@ export const activities: Activity[] = [
     areaId: 'lenguaje',
     name: 'Completar Frases',
     description: 'Completa las frases con la palabra correcta',
-    estimatedTime: 8,
+    estimatedTime: 2,
     cognitiveSkills: ['Comprensión verbal', 'Razonamiento'],
     imageUrl: 'https://images.unsplash.com/photo-1519909089535-c493f2f1e522?w=400'
   },
@@ -137,7 +137,7 @@ export const activities: Activity[] = [
     areaId: 'funciones-ejecutivas',
     name: 'Torre de Hanoi',
     description: 'Mueve los discos siguiendo las reglas',
-    estimatedTime: 15,
+    estimatedTime: 5,
     cognitiveSkills: ['Planificación', 'Resolución de problemas'],
     imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
   },
@@ -146,7 +146,7 @@ export const activities: Activity[] = [
     areaId: 'funciones-ejecutivas',
     name: 'Laberinto',
     description: 'Encuentra el camino de salida del laberinto',
-    estimatedTime: 10,
+    estimatedTime: 4,
     cognitiveSkills: ['Orientación espacial', 'Planificación'],
     imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
   },
@@ -155,7 +155,7 @@ export const activities: Activity[] = [
     areaId: 'funciones-ejecutivas',
     name: 'Ordenar Pasos',
     description: 'Ordena los pasos de una actividad cotidiana',
-    estimatedTime: 12,
+    estimatedTime: 4,
     cognitiveSkills: ['Secuenciación', 'Razonamiento lógico'],
     imageUrl: 'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400'
   },
@@ -166,7 +166,7 @@ export const activities: Activity[] = [
     areaId: 'percepcion',
     name: 'Figuras Ocultas',
     description: 'Encuentra las figuras escondidas en la imagen',
-    estimatedTime: 10,
+    estimatedTime: 3,
     cognitiveSkills: ['Percepción visual', 'Atención'],
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
   },
@@ -175,7 +175,7 @@ export const activities: Activity[] = [
     areaId: 'percepcion',
     name: 'Rotación Mental',
     description: 'Identifica la figura rotada correctamente',
-    estimatedTime: 12,
+    estimatedTime: 4,
     cognitiveSkills: ['Orientación espacial', 'Percepción visual'],
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
   },
@@ -184,7 +184,7 @@ export const activities: Activity[] = [
     areaId: 'percepcion',
     name: 'Colores y Formas',
     description: 'Clasifica elementos por color y forma',
-    estimatedTime: 8,
+    estimatedTime: 2,
     cognitiveSkills: ['Categorización', 'Atención selectiva'],
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400'
   }

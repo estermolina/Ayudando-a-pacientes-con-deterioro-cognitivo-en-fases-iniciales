@@ -1,4 +1,4 @@
-import { Brain, TrendingUp, LogOut, User as UserIcon, Home } from 'lucide-react';
+import { Brain, TrendingUp, LogOut, User as UserIcon, Home, BrainCog } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -47,7 +47,7 @@ export function AppSidebar({ user, onNavigate, onLogout }: AppSidebarProps) {
       <SidebarHeader className="p-6 border-b">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-            <Brain className="w-7 h-7 text-white" />
+            <BrainCog className="w-7 h-7 text-white" />
           </div>
           <div className="min-w-0">
             <h3 className="text-purple-700 truncate">CognitivaCare</h3>

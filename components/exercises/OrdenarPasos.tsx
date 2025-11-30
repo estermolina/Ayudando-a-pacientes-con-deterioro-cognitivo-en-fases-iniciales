@@ -25,19 +25,19 @@ export function OrdenarPasos({ difficulty, onComplete }: OrdenarPasosProps) {
       {
         title: 'Preparar una ensalada',
         steps: ['Servir en plato', 'Lavar verduras', 'Cortar ingredientes', 'Añadir aderezo', 'Mezclar todo'],
-        correct: [1, 2, 4, 3, 0]
+        correct: [1, 2, 3, 4, 0]
       },
       {
         title: 'Plantar una semilla',
         steps: ['Regar la tierra', 'Hacer un agujero', 'Cubrir con tierra', 'Poner la semilla', 'Preparar la maceta'],
-        correct: [4, 1, 3, 2, 0]
+        correct: [4, 2, 1, 3, 0]
       }
     ],
     dificil: [
       {
         title: 'Cambiar una rueda de coche',
         steps: ['Bajar el gato', 'Aflojar tornillos', 'Apretar tornillos nuevos', 'Levantar con gato', 'Quitar rueda vieja', 'Poner rueda nueva'],
-        correct: [1, 3, 4, 5, 2, 0]
+        correct: [1, 3, 4, 5, 0, 2]
       }
     ]
   };

@@ -25,19 +25,19 @@ export function OrdenarPasos({ difficulty, onComplete }: OrdenarPasosProps) {
       {
         title: 'Preparar una ensalada',
         steps: ['Servir en plato', 'Lavar verduras', 'Cortar ingredientes', 'Añadir aderezo', 'Mezclar todo'],
-        correct: [1, 2, 4, 3, 0]
+        correct: [1, 2, 3, 4, 0]
       },
       {
         title: 'Plantar una semilla',
         steps: ['Regar la tierra', 'Hacer un agujero', 'Cubrir con tierra', 'Poner la semilla', 'Preparar la maceta'],
-        correct: [4, 1, 3, 2, 0]
+        correct: [4, 2, 1, 3, 0]
       }
     ],
     dificil: [
       {
         title: 'Cambiar una rueda de coche',
         steps: ['Bajar el gato', 'Aflojar tornillos', 'Apretar tornillos nuevos', 'Levantar con gato', 'Quitar rueda vieja', 'Poner rueda nueva'],
-        correct: [1, 3, 4, 5, 2, 0]
+        correct: [1, 3, 4, 5, 0, 2]
       }
     ]
   };
@@ -88,6 +88,7 @@ export function OrdenarPasos({ difficulty, onComplete }: OrdenarPasosProps) {
       <div className="text-center mb-8">
         <p className="text-xl text-gray-600 mb-4">Actividad {currentTaskIndex + 1} de {selectedTasks.length}</p>
         <h3 className="text-gray-900 mb-4">Ordena los pasos para: {currentTask.title}</h3>
+        <h2 className="text-1xl font-bold text-gray-800">⚠️Utiliza las flechas para mover cada paso hacia arriba o hacia abajo⚠️</h2>
       </div>
 
       <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-3xl p-8 mb-8">

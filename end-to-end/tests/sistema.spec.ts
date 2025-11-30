@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
  * Pruebas end-to-end que verifican el funcionamiento de la aplicación
  */
 
-test.describe('Smoke Tests', () => {
+test.describe('Pruebas del sistema', () => {
   test('la aplicación carga correctamente', async ({ page }) => {
     await page.goto('http://localhost:3000/');
     
@@ -16,7 +16,7 @@ test.describe('Smoke Tests', () => {
 
   test('el flujo básico de registro funciona', async ({ page }) => {
     const timestamp = Date.now();
-    const testEmail = `smoke-${timestamp}@test.com`;
+    const testEmail = `prueba-${timestamp}@test.com`;
     
     await page.goto('http://localhost:3000/');
     

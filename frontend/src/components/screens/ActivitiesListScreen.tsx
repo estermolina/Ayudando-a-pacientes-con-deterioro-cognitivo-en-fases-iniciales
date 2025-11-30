@@ -41,16 +41,16 @@ export function ActivitiesListScreen({
             </Button>
             <h1 className="text-purple-700">{area.name}</h1>
           </div>
-
-          {/* Search Bar */}
-          <div className="relative max-w-2xl">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-7 h-7 text-muted-foreground" />
+          
+          {/* Barra de búsqueda */}
+          <div className="relative max-w-3xl w-full">
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-8 h-8 text-muted-foreground" />
             <Input
               type="text"
               placeholder="Buscar actividad..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-16 h-16 text-xl"
+              className="pl-20 pr-6 h-20 text-2xl rounded-2xl"
             />
           </div>
         </div>

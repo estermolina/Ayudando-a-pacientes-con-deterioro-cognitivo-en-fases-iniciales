@@ -115,20 +115,28 @@ export function AppSidebar({ user, onNavigate, onLogout }: AppSidebarProps) {
                   />
                   <button
                     onClick={openFileSelector}
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full opacity-0 group-hover/photo:opacity-100 transition-opacity"
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 rounded-full opacity-0 group-hover/photo:opacity-100 transition-opacity"
                     aria-label="Cambiar foto de perfil"
                   >
-                    <Camera className="w-6 h-6 text-white group-data-[collapsible=icon]:w-4 group-data-[collapsible=icon]:h-4" />
+                    <Camera className="w-6 h-6 text-white group-data-[collapsible=icon]:w-4 group-data-[collapsible=icon]:h-4 mb-1 group-data-[collapsible=icon]:mb-0" />
+                    <span className="text-[10px] text-white font-medium group-data-[collapsible=icon]:hidden">
+                      Cambiar
+                    </span>
                   </button>
                 </div>
               ) : (
-                <button
-                  onClick={openFileSelector}
-                  className="w-20 h-20 group-data-[collapsible=icon]:w-10 group-data-[collapsible=icon]:h-10 rounded-full border-3 border-dashed border-purple-400 flex items-center justify-center bg-white hover:bg-purple-100 transition-all"
-                  aria-label="Subir foto de perfil"
-                >
-                  <Camera className="w-7 h-7 text-purple-600 group-data-[collapsible=icon]:w-5 group-data-[collapsible=icon]:h-5" />
-                </button>
+                <div className="relative">
+                  <button
+                    onClick={openFileSelector}
+                    className="w-20 h-20 group-data-[collapsible=icon]:w-10 group-data-[collapsible=icon]:h-10 rounded-full border-3 border-dashed border-purple-400 flex flex-col items-center justify-center bg-white hover:bg-purple-50 transition-all group/upload"
+                    aria-label="Subir foto de perfil"
+                  >
+                    <Camera className="w-7 h-7 text-purple-600 group-data-[collapsible=icon]:w-5 group-data-[collapsible=icon]:h-5 mb-1 group-data-[collapsible=icon]:mb-0" />
+                    <span className="text-[10px] text-purple-600 font-medium group-data-[collapsible=icon]:hidden">
+                      Añadir foto
+                    </span>
+                  </button>
+                </div>
               )}
             </div>
             
