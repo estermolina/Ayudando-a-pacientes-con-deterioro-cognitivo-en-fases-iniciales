@@ -41,7 +41,7 @@ CognitivaCare/
 │   ├── server.js                
 │   ├── routes/                  # Endpoints API
 │   ├── models/                  # Lógica de datos (Base de datos)
-│   └── .env
+│   └── .env                     # Variables de entorno
 ├── end-to-end/
 │   └── tests/
 │        └──sistema.spec.ts   # Pruebas integrales (2E2) de la aplicación
@@ -49,12 +49,12 @@ CognitivaCare/
     └── index.html            # archivo HTML de entrada
     └── src/
         ├── main.tsx          # Punto de entrada React
-        ├── App.tsx           # Componente principal
-        ├── components/  
-        ├── data/
+        ├── App.tsx           # Estructura principal
+        ├── components/       # Componentes como pantallas, ejercicios, botones...
+        ├── data/             # Datos estáticos
         ├── services/          # llamadas API
-        ├── styles/
-        └── types/             # Estilos Tailwind CSS
+        ├── styles/            # Estilos Tailwind CSS
+        └── types/             # Tipos TypeScript
 ```
         
 ## 🎯 Requisitos previos para instalación de la aplicación 
